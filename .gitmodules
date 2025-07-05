@@ -1,0 +1,4 @@
+[submodule "clear-signing-erc7730-builder"]
+	path = clear-signing-erc7730-builder
+	url = https://github.com/filoozom/clear-signing-erc7730-builder.git
+	branch = hackathon
