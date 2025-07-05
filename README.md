@@ -30,6 +30,7 @@ This is rough unorganized feedback from using the builder.
 - DeFi protocols are often quite complex in their input data. It can be raw bytes that need specialized deserialization or data regular users wouldn't understand. Maybe some guidelines to explain how precise the field and operation names have to be would be useful.
 - There should definitely be an option to import existing ERC-7730 JSON files, either as an upload (implement in [f2b56e1](https://github.com/filoozom/clear-signing-erc7730-builder/commit/f2b56e10b7f134d40c2e94798ad8361e2dc007f6)) or directly from the registry.
 - It's a detail, but there should be a button to go back to the home page to work on a new contract (ideally with an exit warning prompt).
+- There needs to be some messaging about why a form isn't valid and why the "Save operation" button is disabled.
 - It's not immediately clear how an array value is displayed on the Ledger. The builder shows a single value instead of a list:
 
     ```
