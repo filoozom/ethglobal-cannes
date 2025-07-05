@@ -11,7 +11,7 @@ This project isn't built from scratch, but rather aims at contributing to the Cl
 
 ## Changes
 
-As this is a hackathon project, there are no clearly defined pull requests or commits, just a branch that contains a bulk of the work. The diff can be found here: https://github.com/filoozom/clear-signing-erc7730-builder/compare/main..hackathon.
+As this is a hackathon project, there are no clearly defined pull requests or commits, just a branch that contains a bulk of the work. The diff can be found [here](https://github.com/filoozom/clear-signing-erc7730-builder/compare/main..hackathon) and the final version is in the [clear-signing-erc7730-builder submodule](clear-signing-erc7730-builder).
 
 The main objective was to implement AI (and userdoc) suggestions for all the data, including metadata, operation names and field names. An LLM (hosted on OpenRouter) is fed all the information from Sourcify (devdoc, userdoc, sources, abi, etc) with the objective of allowing it to understand the contracts. A new tab was also added to the home page to find contracts (name and address) by protocol name.
 
