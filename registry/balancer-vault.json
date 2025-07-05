@@ -1,0 +1,1552 @@
+{
+  "$schema": null,
+  "context": {
+    "$id": "Vault",
+    "contract": {
+      "deployments": [
+        {
+          "chainId": 1,
+          "address": "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
+        }
+      ],
+      "abi": [
+        {
+          "type": "function",
+          "name": "WETH",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract IWETH",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "batchSwap",
+          "inputs": [
+            {
+              "name": "kind",
+              "type": "uint8",
+              "internalType": "enum IVault.SwapKind",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "swaps",
+              "type": "tuple[]",
+              "internalType": "struct IVault.BatchSwapStep[]",
+              "components": [
+                {
+                  "name": "poolId",
+                  "type": "bytes32",
+                  "internalType": "bytes32",
+                  "components": null
+                },
+                {
+                  "name": "assetInIndex",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "assetOutIndex",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "amount",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "userData",
+                  "type": "bytes",
+                  "internalType": "bytes",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "assets",
+              "type": "address[]",
+              "internalType": "contract IAsset[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "funds",
+              "type": "tuple",
+              "internalType": "struct IVault.FundManagement",
+              "components": [
+                {
+                  "name": "sender",
+                  "type": "address",
+                  "internalType": "address",
+                  "components": null
+                },
+                {
+                  "name": "fromInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                },
+                {
+                  "name": "recipient",
+                  "type": "address",
+                  "internalType": "address payable",
+                  "components": null
+                },
+                {
+                  "name": "toInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "limits",
+              "type": "int256[]",
+              "internalType": "int256[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "deadline",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "assetDeltas",
+              "type": "int256[]",
+              "internalType": "int256[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "payable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "deregisterTokens",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "tokens",
+              "type": "address[]",
+              "internalType": "contract IERC20[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "exitPool",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "sender",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "recipient",
+              "type": "address",
+              "internalType": "address payable",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "request",
+              "type": "tuple",
+              "internalType": "struct IVault.ExitPoolRequest",
+              "components": [
+                {
+                  "name": "assets",
+                  "type": "address[]",
+                  "internalType": "contract IAsset[]",
+                  "components": null
+                },
+                {
+                  "name": "minAmountsOut",
+                  "type": "uint256[]",
+                  "internalType": "uint256[]",
+                  "components": null
+                },
+                {
+                  "name": "userData",
+                  "type": "bytes",
+                  "internalType": "bytes",
+                  "components": null
+                },
+                {
+                  "name": "toInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "flashLoan",
+          "inputs": [
+            {
+              "name": "recipient",
+              "type": "address",
+              "internalType": "contract IFlashLoanRecipient",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "tokens",
+              "type": "address[]",
+              "internalType": "contract IERC20[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "amounts",
+              "type": "uint256[]",
+              "internalType": "uint256[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "userData",
+              "type": "bytes",
+              "internalType": "bytes",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getActionId",
+          "inputs": [
+            {
+              "name": "selector",
+              "type": "bytes4",
+              "internalType": "bytes4",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getAuthorizer",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract IAuthorizer",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getDomainSeparator",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getInternalBalance",
+          "inputs": [
+            {
+              "name": "user",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "tokens",
+              "type": "address[]",
+              "internalType": "contract IERC20[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "balances",
+              "type": "uint256[]",
+              "internalType": "uint256[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getNextNonce",
+          "inputs": [
+            {
+              "name": "user",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getPausedState",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "paused",
+              "type": "bool",
+              "internalType": "bool",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "pauseWindowEndTime",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "bufferPeriodEndTime",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getPool",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "",
+              "type": "uint8",
+              "internalType": "enum IVault.PoolSpecialization",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getPoolTokenInfo",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "token",
+              "type": "address",
+              "internalType": "contract IERC20",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "cash",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "managed",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "lastChangeBlock",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "assetManager",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getPoolTokens",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "tokens",
+              "type": "address[]",
+              "internalType": "contract IERC20[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "balances",
+              "type": "uint256[]",
+              "internalType": "uint256[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "lastChangeBlock",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "getProtocolFeesCollector",
+          "inputs": [],
+          "outputs": [
+            {
+              "name": "",
+              "type": "address",
+              "internalType": "contract ProtocolFeesCollector",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "hasApprovedRelayer",
+          "inputs": [
+            {
+              "name": "user",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "relayer",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "bool",
+              "internalType": "bool",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "view",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "joinPool",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "sender",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "recipient",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "request",
+              "type": "tuple",
+              "internalType": "struct IVault.JoinPoolRequest",
+              "components": [
+                {
+                  "name": "assets",
+                  "type": "address[]",
+                  "internalType": "contract IAsset[]",
+                  "components": null
+                },
+                {
+                  "name": "maxAmountsIn",
+                  "type": "uint256[]",
+                  "internalType": "uint256[]",
+                  "components": null
+                },
+                {
+                  "name": "userData",
+                  "type": "bytes",
+                  "internalType": "bytes",
+                  "components": null
+                },
+                {
+                  "name": "fromInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "payable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "managePoolBalance",
+          "inputs": [
+            {
+              "name": "ops",
+              "type": "tuple[]",
+              "internalType": "struct IVault.PoolBalanceOp[]",
+              "components": [
+                {
+                  "name": "kind",
+                  "type": "uint8",
+                  "internalType": "enum IVault.PoolBalanceOpKind",
+                  "components": null
+                },
+                {
+                  "name": "poolId",
+                  "type": "bytes32",
+                  "internalType": "bytes32",
+                  "components": null
+                },
+                {
+                  "name": "token",
+                  "type": "address",
+                  "internalType": "contract IERC20",
+                  "components": null
+                },
+                {
+                  "name": "amount",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "manageUserBalance",
+          "inputs": [
+            {
+              "name": "ops",
+              "type": "tuple[]",
+              "internalType": "struct IVault.UserBalanceOp[]",
+              "components": [
+                {
+                  "name": "kind",
+                  "type": "uint8",
+                  "internalType": "enum IVault.UserBalanceOpKind",
+                  "components": null
+                },
+                {
+                  "name": "asset",
+                  "type": "address",
+                  "internalType": "contract IAsset",
+                  "components": null
+                },
+                {
+                  "name": "amount",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "sender",
+                  "type": "address",
+                  "internalType": "address",
+                  "components": null
+                },
+                {
+                  "name": "recipient",
+                  "type": "address",
+                  "internalType": "address payable",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "payable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "queryBatchSwap",
+          "inputs": [
+            {
+              "name": "kind",
+              "type": "uint8",
+              "internalType": "enum IVault.SwapKind",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "swaps",
+              "type": "tuple[]",
+              "internalType": "struct IVault.BatchSwapStep[]",
+              "components": [
+                {
+                  "name": "poolId",
+                  "type": "bytes32",
+                  "internalType": "bytes32",
+                  "components": null
+                },
+                {
+                  "name": "assetInIndex",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "assetOutIndex",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "amount",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "userData",
+                  "type": "bytes",
+                  "internalType": "bytes",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "assets",
+              "type": "address[]",
+              "internalType": "contract IAsset[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "funds",
+              "type": "tuple",
+              "internalType": "struct IVault.FundManagement",
+              "components": [
+                {
+                  "name": "sender",
+                  "type": "address",
+                  "internalType": "address",
+                  "components": null
+                },
+                {
+                  "name": "fromInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                },
+                {
+                  "name": "recipient",
+                  "type": "address",
+                  "internalType": "address payable",
+                  "components": null
+                },
+                {
+                  "name": "toInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "int256[]",
+              "internalType": "int256[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "registerPool",
+          "inputs": [
+            {
+              "name": "specialization",
+              "type": "uint8",
+              "internalType": "enum IVault.PoolSpecialization",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "registerTokens",
+          "inputs": [
+            {
+              "name": "poolId",
+              "type": "bytes32",
+              "internalType": "bytes32",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "tokens",
+              "type": "address[]",
+              "internalType": "contract IERC20[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "assetManagers",
+              "type": "address[]",
+              "internalType": "address[]",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "setAuthorizer",
+          "inputs": [
+            {
+              "name": "newAuthorizer",
+              "type": "address",
+              "internalType": "contract IAuthorizer",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "setPaused",
+          "inputs": [
+            {
+              "name": "paused",
+              "type": "bool",
+              "internalType": "bool",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "setRelayerApproval",
+          "inputs": [
+            {
+              "name": "sender",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "relayer",
+              "type": "address",
+              "internalType": "address",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "approved",
+              "type": "bool",
+              "internalType": "bool",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        },
+        {
+          "type": "function",
+          "name": "swap",
+          "inputs": [
+            {
+              "name": "singleSwap",
+              "type": "tuple",
+              "internalType": "struct IVault.SingleSwap",
+              "components": [
+                {
+                  "name": "poolId",
+                  "type": "bytes32",
+                  "internalType": "bytes32",
+                  "components": null
+                },
+                {
+                  "name": "kind",
+                  "type": "uint8",
+                  "internalType": "enum IVault.SwapKind",
+                  "components": null
+                },
+                {
+                  "name": "assetIn",
+                  "type": "address",
+                  "internalType": "contract IAsset",
+                  "components": null
+                },
+                {
+                  "name": "assetOut",
+                  "type": "address",
+                  "internalType": "contract IAsset",
+                  "components": null
+                },
+                {
+                  "name": "amount",
+                  "type": "uint256",
+                  "internalType": "uint256",
+                  "components": null
+                },
+                {
+                  "name": "userData",
+                  "type": "bytes",
+                  "internalType": "bytes",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "funds",
+              "type": "tuple",
+              "internalType": "struct IVault.FundManagement",
+              "components": [
+                {
+                  "name": "sender",
+                  "type": "address",
+                  "internalType": "address",
+                  "components": null
+                },
+                {
+                  "name": "fromInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                },
+                {
+                  "name": "recipient",
+                  "type": "address",
+                  "internalType": "address payable",
+                  "components": null
+                },
+                {
+                  "name": "toInternalBalance",
+                  "type": "bool",
+                  "internalType": "bool",
+                  "components": null
+                }
+              ],
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "limit",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            },
+            {
+              "name": "deadline",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "outputs": [
+            {
+              "name": "amountCalculated",
+              "type": "uint256",
+              "internalType": "uint256",
+              "components": null,
+              "indexed": null,
+              "unit": null
+            }
+          ],
+          "stateMutability": "payable",
+          "constant": null,
+          "payable": null,
+          "gas": null,
+          "signature": null
+        }
+      ],
+      "addressMatcher": null,
+      "factory": null
+    }
+  },
+  "metadata": {
+    "owner": "Balancer",
+    "info": {
+      "legalName": "Balancer Foundation",
+      "url": "https://balancer.fi"
+    }
+  },
+  "display": {
+    "formats": {
+      "deposit(bytes,bytes,bytes,bytes32)": {
+        "$id": null,
+        "intent": "deposit stake for an Ethereum validator",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Public key",
+            "format": "raw",
+            "params": null,
+            "path": "#.pubkey",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Withdrawal credentials",
+            "format": "raw",
+            "params": null,
+            "path": "#.withdrawal_credentials",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Signature",
+            "format": "raw",
+            "params": null,
+            "path": "#.signature",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Deposit data root",
+            "format": "raw",
+            "params": null,
+            "path": "#.deposit_data_root",
+            "value": null
+          }
+        ],
+        "required": [
+          "#.pubkey",
+          "#.withdrawal_credentials",
+          "#.signature",
+          "#.deposit_data_root"
+        ],
+        "excluded": null
+      },
+      "deregisterTokens(bytes32,address[])": {
+        "$id": null,
+        "intent": "deregister tokens from a pool",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Pool ID",
+            "format": "raw",
+            "params": null,
+            "path": "#.poolId",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Tokens",
+            "format": "addressName",
+            "params": {
+              "types": ["token"],
+              "sources": []
+            },
+            "path": "#.tokens.[]",
+            "value": null
+          }
+        ],
+        "required": ["#.poolId", "#.tokens.[]"],
+        "excluded": null
+      },
+      "exitPool(bytes32,address,address,(address[],uint256[],bytes,bool))": {
+        "$id": null,
+        "intent": "exit a pool by withdrawing tokens",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Pool ID",
+            "format": "raw",
+            "params": null,
+            "path": "#.poolId",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Address initiating the pool exit",
+            "format": "addressName",
+            "params": {
+              "types": ["wallet", "eoa"],
+              "sources": ["local", "ens"]
+            },
+            "path": "#.sender",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Address to receive the withdrawn tokens",
+            "format": "addressName",
+            "params": {
+              "types": ["eoa", "wallet"],
+              "sources": ["local", "ens"]
+            },
+            "path": "#.recipient",
+            "value": null
+          },
+          {
+            "path": "#.request",
+            "value": null,
+            "fields": [
+              {
+                "$id": null,
+                "label": "Assets",
+                "format": "addressName",
+                "params": {
+                  "types": ["token"],
+                  "sources": null
+                },
+                "path": "assets.[]",
+                "value": null
+              },
+              {
+                "$id": null,
+                "label": "Minimum amounts to exit",
+                "format": "amount",
+                "params": null,
+                "path": "minAmountsOut.[]",
+                "value": null
+              },
+              {
+                "$id": null,
+                "label": "Custom user data",
+                "format": "raw",
+                "params": null,
+                "path": "userData",
+                "value": null
+              },
+              {
+                "$id": null,
+                "label": "Keep the balance on Balancer instead of exiting",
+                "format": "raw",
+                "params": null,
+                "path": "toInternalBalance",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "required": [
+          "#.poolId",
+          "#.sender",
+          "#.recipient",
+          "#.requestassets.[]",
+          "#.requestminAmountsOut.[]",
+          "#.requestuserData",
+          "#.requesttoInternalBalance"
+        ],
+        "excluded": null
+      },
+      "flashLoan(address,address[],uint256[],bytes)": {
+        "$id": null,
+        "intent": "execute a flash loan",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Recipient of the flash loan",
+            "format": "addressName",
+            "params": {
+              "types": ["eoa", "wallet"],
+              "sources": []
+            },
+            "path": "#.recipient",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Tokens to loan",
+            "format": "addressName",
+            "params": {
+              "types": ["token"],
+              "sources": null
+            },
+            "path": "#.tokens.[]",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Amounts to loan for each token",
+            "format": "amount",
+            "params": {},
+            "path": "#.amounts.[]",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Custom user data",
+            "format": "raw",
+            "params": null,
+            "path": "#.userData",
+            "value": null
+          }
+        ],
+        "required": [
+          "#.recipient",
+          "#.tokens.[]",
+          "#.amounts.[]",
+          "#.userData"
+        ],
+        "excluded": null
+      },
+      "joinPool(bytes32,address,address,(address[],uint256[],bytes,bool))": {
+        "$id": null,
+        "intent": "join a pool by depositing tokens",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Pool ID",
+            "format": "raw",
+            "params": null,
+            "path": "#.poolId",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Address that provides the tokens",
+            "format": "addressName",
+            "params": {
+              "types": ["wallet", "eoa"],
+              "sources": ["ens", "local"]
+            },
+            "path": "#.sender",
+            "value": null
+          },
+          {
+            "$id": null,
+            "label": "Address the receives the pool share tokens",
+            "format": "addressName",
+            "params": {
+              "types": ["eoa", "wallet"],
+              "sources": ["local", "ens"]
+            },
+            "path": "#.recipient",
+            "value": null
+          },
+          {
+            "path": "#.request",
+            "value": null,
+            "fields": [
+              {
+                "$id": null,
+                "label": "Assets to deposit",
+                "format": "addressName",
+                "params": {
+                  "types": ["token"],
+                  "sources": null
+                },
+                "path": "assets.[]",
+                "value": null
+              },
+              {
+                "$id": null,
+                "label": "Maximum amounts to deposit",
+                "format": "amount",
+                "params": null,
+                "path": "maxAmountsIn.[]",
+                "value": null
+              },
+              {
+                "$id": null,
+                "label": "Custom user data",
+                "format": "raw",
+                "params": null,
+                "path": "userData",
+                "value": null
+              },
+              {
+                "$id": null,
+                "label": "Deposit from internal balance",
+                "format": "raw",
+                "params": {},
+                "path": "fromInternalBalance",
+                "value": null
+              }
+            ]
+          }
+        ],
+        "required": [
+          "#.poolId",
+          "#.sender",
+          "#.recipient",
+          "#.requestassets.[]",
+          "#.requestmaxAmountsIn.[]",
+          "#.requestuserData",
+          "#.requestfromInternalBalance"
+        ],
+        "excluded": null
+      },
+      "registerPool(uint8)": {
+        "$id": null,
+        "intent": "register a pool",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Specialization of the pool",
+            "format": "raw",
+            "params": null,
+            "path": "#.specialization",
+            "value": null
+          }
+        ],
+        "required": ["#.specialization"],
+        "excluded": null
+      },
+      "setPaused(bool)": {
+        "$id": null,
+        "intent": "pause the contract",
+        "screens": null,
+        "fields": [
+          {
+            "$id": null,
+            "label": "Paused",
+            "format": "raw",
+            "params": null,
+            "path": "#.paused",
+            "value": null
+          }
+        ],
+        "required": ["#.paused"],
+        "excluded": null
+      }
+    }
+  }
+}
