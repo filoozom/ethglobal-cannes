@@ -17,6 +17,8 @@ The main objective was to implement AI (and userdoc) suggestions for all the dat
 
 The updates also include an attempt of porting the [python-erc7730](https://github.com/LedgerHQ/python-erc7730) module [here](https://github.com/filoozom/clear-signing-erc7730-builder/blob/hackathon/src/server/api/lib/generate.ts), with the objective of having a unified codebase in the same language. However, due to time constraints this wasn't finished. The current implementation still uses the Python API and extends its output with additional data.
 
+Another very useful function I added is to import existing schemas to continued editing them. This was done in commit [f2b56e1](https://github.com/filoozom/clear-signing-erc7730-builder/commit/f2b56e10b7f134d40c2e94798ad8361e2dc007f6).
+
 ## Feedback about ERC-7730 and the builder
 
 This is rough unorganized feedback from using the builder.
@@ -26,7 +28,7 @@ This is rough unorganized feedback from using the builder.
 - There should be a boolean field format, unless I missed a way to achieve that.
 - The UI shows `pure` and `view` functions. To me this doesn't make any sense, as they'd never get executed by a Ledger.
 - DeFi protocols are often quite complex in their input data. It can be raw bytes that need specialized deserialization or data regular users wouldn't understand. Maybe some guidelines to explain how precise the field and operation names have to be would be useful.
-- There should definitely be an option to import existing ERC-7730 JSON files, either as an upload or directly from the registry.
+- There should definitely be an option to import existing ERC-7730 JSON files, either as an upload (implement in [f2b56e1](https://github.com/filoozom/clear-signing-erc7730-builder/commit/f2b56e10b7f134d40c2e94798ad8361e2dc007f6)) or directly from the registry.
 - It's a detail, but there should be a button to go back to the home page to work on a new contract (ideally with an exit warning prompt).
 - It's not immediately clear how an array value is displayed on the Ledger. The builder shows a single value instead of a list:
 
