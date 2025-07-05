@@ -3,19 +3,21 @@
 This project isn't built from scratch, but rather aims at contributing to the Clear Signing efforts led by Ledger. It contains 3 parts:
 
 - [Hackathon project](#hackathon-project)
-  - [Changes](#changes)
-  - [Feedback](#feedback)
+  - [Changes to clear-signing-erc7730-builder](#changes-to-clear-signing-erc7730-builder)
+  - [Feedback about ERC-7730 and the builder](#feedback-about-erc-7730-and-the-builder)
     - [Builder](#builder)
     - [ERC-7730](#erc-7730)
-  - [Schemas](#schemas)
+  - [ERC-7730 schemas](#erc-7730-schemas)
 
-## Changes
+## Changes to clear-signing-erc7730-builder
 
 As this is a hackathon project, there are no clearly defined pull requests or commits, just a branch that contains a bulk of the work. The diff can be found [here](https://github.com/filoozom/clear-signing-erc7730-builder/compare/main..hackathon) and the final version is in the [clear-signing-erc7730-builder submodule](clear-signing-erc7730-builder).
 
 The main objective was to implement AI (and userdoc) suggestions for all the data, including metadata, operation names and field names. An LLM (hosted on OpenRouter) is fed all the information from Sourcify (devdoc, userdoc, sources, abi, etc) with the objective of allowing it to understand the contracts. A new tab was also added to the home page to find contracts (name and address) by protocol name.
 
-## Feedback
+The updates also include an attempt of porting the [python-erc7730](https://github.com/LedgerHQ/python-erc7730) module [here](https://github.com/filoozom/clear-signing-erc7730-builder/blob/hackathon/src/server/api/lib/generate.ts), with the objective of having a unified codebase in the same language. However, due to time constraints this wasn't finished. The current implementation still uses the Python API and extends its output with additional data.
+
+## Feedback about ERC-7730 and the builder
 
 This is rough unorganized feedback from using the builder.
 
@@ -57,6 +59,6 @@ This is rough unorganized feedback from using the builder.
 - Some way to describe more complex data would be nice, but probably difficult as they'd like require code to deserialize bytes.
 
 
-## Schemas
+## ERC-7730 schemas
 
-Can be found in the [registry](registry) folder.
+Created with the use of the AI-augmented builder. Can be found in the [registry](registry) folder.
